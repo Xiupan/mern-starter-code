@@ -30,3 +30,14 @@
   - created seed data inside the model file that only gets created if the collection is empty
   - `module.exports = ModelClass`  
 - require in `User.js` in `app.js`
+
+## step-04
+- created `userController.js`
+- require in model file
+- create a function called `readAll` that has `request, response, next` as arguments
+- the function searches the `User` model; if there is an error, it returns the error to the response with a 500 status code. Otherwise, it returns the array of `User` objects from the DB.
+- created `router` folder and created `routes.js` inside
+- require `UserController` inside `routes.js`
+- create test routes. One to see if the backend is working and serving up a simple JSON message. Another to show data from the DB.
+- require in `routes.js` inside `app.js`
+- `router(app)`

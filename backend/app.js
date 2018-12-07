@@ -2,9 +2,11 @@ const express = require('express');
 const http = require('http');
 const mongoose = require('mongoose');
 
-const User = require('./models/User.js')
+const router = require('./router/routes')
 
 const app = express();
+
+router(app)
 
 const server = http.createServer(app)
 const port = 5000

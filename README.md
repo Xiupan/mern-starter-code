@@ -41,3 +41,13 @@
 - create test routes. One to see if the backend is working and serving up a simple JSON message. Another to show data from the DB.
 - require in `routes.js` inside `app.js`
 - `router(app)`
+
+## step-05
+- create the frontend; `npx create-react-app frontend`
+- render data in `App.js` in `frontend`
+- `constructor()` with `super()` and set the initial state
+- `componentDidMount()` with a fetch to the our `users` backend route, and then setting state with the users data
+- render out the state
+- on the backend, `npm install --save cors`
+- require in `cors`
+- then `app.use(cors())`

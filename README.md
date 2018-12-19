@@ -51,3 +51,25 @@
 - on the backend, `npm install --save cors`
 - require in `cors`
 - then `app.use(cors())`
+
+## step-06
+- This step is very involved and is setting up Authentication and Authorization on the backend
+- `npm install --save bcrypt-nodejs jwt-simple passport passport-jwt passport-local`
+- require in `passport` and `body-parser` in `app.js`
+- `app.use(bodyParser.json())` in `app.js`
+- bodyParser is built in to express and just needs to be required in
+- bodyParser will allow you to parse the body of requests; without it, the backend cannot retrieve the body of POST requests
+- created a folder `config` and put `keys.js` inside it
+- for instructional purposes, I am pushing up the `config` folder to GitHub. But if you are using this code for your own app, you probably will want to hide all your API keys and stuff inside the `keys.js` file and then add the `config` folder to your `.gitignore` file
+- added functions to `User.js` in order to hash the passwords before `.save()` and also to `comparePassword`
+- added `services` folder and put `passport.js` inside it
+- added all the login stuff to `passport.js`
+- for further help and reference, please refer to the Passport Documentation at `https://www.npmjs.com/package/passport-jwt`
+- created the `authentication.js` file inside `controllers`
+- `authentication.js` has a `tokenForUser` function, which encodes the user's id, a timestamp, and the jwt-secret
+- the `signin` function returns the `token` to the front-end
+- the `signup` function creates a new User and then returns the `token`
+- in `routes.js`, we bring it all together and use the `Authentication` controller, the `passportService` and `passport`, we `requireAuth` and `requireSignin` that both use "Passport Strategies" that allow them to work, and then we use `requireAuth` to protect our test route `/api/test`
+- If you have been following along since the beginning, your DB might be populated with Users that simply have regular strings of "1234" as their passwords. Using these Users will not work anymore. In the terminal, run `mongo`, then `show dbs` to see all your dbs that are on your local machine, then `use your-db-name`, then `show collections` to see all your collections(tables in Mongo are called collections), then to drop a table in Mongo, you would do `db.users.drop()` and it should return `true`. The next time you run the backend again, it should populate with new Users that have hashed passwords now.
+- Now you can hit the `/api/user/signin` route with a valid User in the body of the request in Postman and you will get a `token` back
+- set that `token` inside your `headers` inside Postman and then try and hit `/api/test`, if you have a valid `token`, you should be able to see that message in the body of the response!

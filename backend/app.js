@@ -2,10 +2,13 @@ const express = require('express');
 const http = require('http');
 const mongoose = require('mongoose');
 
+const cors = require('cors');
+
 const router = require('./router/routes')
 
 const app = express();
 
+app.use(cors())
 router(app)
 
 const server = http.createServer(app)

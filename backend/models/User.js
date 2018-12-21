@@ -8,19 +8,19 @@ const userSchema = new Schema({
   lastName: {type: String, required: true}
 })
 
-const ModelClass = mongoose.model('users', userSchema)
+const User = mongoose.model('users', userSchema)
 
-ModelClass.find({}, (err, users) => {
+User.find({}, (err, users) => {
   if (err) {
     console.log(err);
   } else if (users.length === 0) {
-    const user1 = new ModelClass({
+    const user1 = new User({
       email: 'test@example.com',
       password: '1234',
       firstName: 'Alan',
       lastName: 'Hong'
     })
-    const user2 = new ModelClass({
+    const user2 = new User({
       email: 'test2@example.com',
       password: '1234',
       firstName: 'Josh',
@@ -32,4 +32,4 @@ ModelClass.find({}, (err, users) => {
   }
 })
 
-module.exports = ModelClass
+module.exports = User

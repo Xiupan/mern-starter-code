@@ -54,6 +54,11 @@
 - require in `cors`
 - then `app.use(cors())`
 
+## step-05B (Optional)
+- to magically start the backend and frontend together with one command, do `npm install -g concurrently nodemon`
+- if you take a look at the package.json files in frontend, backend and the root project folder, you will see some new scripts that use `concurrently` in order to start both the backend and frontend together by running `npm run dev` in the root folder
+- this step is optional but may speed up the development process
+
 ## step-06
 - This step is very involved and is setting up Authentication and Authorization on the backend
 - `npm install --save bcrypt-nodejs jwt-simple passport passport-jwt passport-local`

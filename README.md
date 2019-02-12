@@ -2,6 +2,8 @@
 
 ## Magical Postman Collection to Test your NodeJS Server!
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e3e792f85dd19e55bf13#?env%5BLocal%20Environment%5D=W3siZGVzY3JpcHRpb24iOnsiY29udGVudCI6IiIsInR5cGUiOiJ0ZXh0L3BsYWluIn0sInZhbHVlIjoibG9jYWxob3N0OjUwMDAiLCJrZXkiOiJ1cmwiLCJlbmFibGVkIjp0cnVlfSx7ImRlc2NyaXB0aW9uIjp7ImNvbnRlbnQiOiIiLCJ0eXBlIjoidGV4dC9wbGFpbiJ9LCJ2YWx1ZSI6ImV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5leUp6ZFdJaU9pSTFZekU1Tm1FeVptTmxPR1ZrTmpOallUTTNNV1ZoWXpZaUxDSnBZWFFpT2pFMU5EVXhOekV4TnpRek9UTjkuWmtiOWMySTh0eC14Z1FuZ2VmVGs4RTlqRjJiSDNsYkFBb05xVk5xeVM3QSIsImtleSI6ImF1dGhUb2tlbiIsImVuYWJsZWQiOnRydWV9XQ==)
+- Click the button above ^, and then follow the prompts to open the collection in Postman! :ultrafastparrot:
+- Use the collection in Postman to test your NodeJS backend after finishing step-04
 
 ## Steps Taken So Far
 - `npm init` & `git init`

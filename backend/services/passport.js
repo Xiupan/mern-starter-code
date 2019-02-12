@@ -1,3 +1,4 @@
+// require in all the things!
 const passport = require('passport')
 const User = require('../models/User')
 const config = require('../config/keys')
@@ -5,6 +6,7 @@ const JwtStrategy = require('passport-jwt').Strategy
 const ExtractJwt = require('passport-jwt').ExtractJwt
 const LocalStrategy = require('passport-local')
 
+// this is all configuration for passport. Refer to the Passport documentation for more help
 const localOptions = { usernameField: 'email' }
 const localLogin = new LocalStrategy(localOptions, function(email, password, done) {
   User.findOne({ email: email }, function(err, user) {

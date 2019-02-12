@@ -2,16 +2,19 @@ const jwt = require('jwt-simple')
 const User = require('../models/User')
 const config = require('../config/keys')
 
+// custom function to encode the user's id, a timestamp, and the jwtSecret all together to get a valid token
 const tokenForUser = (user) => {
   const timestamp = new Date().getTime()
   return jwt.encode({ sub: user.id, iat: timestamp }, config.jwtSecret)
 }
 
+// signin should take the user from the body of the request, pass that into tokenForUser, which is the function we created above, and then send that token to the frontend.
 exports.signin = (req, res, next) => {
   const token = tokenForUser(req.user)
   res.json({token: token})
 }
 
+// signup takes in an email and password from the request, checks if the email is in the DB already, if it's not in use, it creates a new User, saves it, then gets a token and returns it to the frontend. The frontend can use that token to log the user in.
 exports.signup = (req, res, next) => {
   const email = req.body.email
   const password = req.body.password

@@ -1,14 +1,15 @@
 const User = require('../models/User.js')
 
-exports.readAll = (req, res, next) => {
+// function to find all Users and send it to the frontend as JSON
+exports.readAll = (request, response, next) => {
   User.find((err, users) => {
     if (err) {
-      res.status(500).json({
+      response.status(500).json({
         success: false,
         error: err
       })
     } else {
-      res.status(200).json(users)
+      response.status(200).json(users)
     }
   })
 }

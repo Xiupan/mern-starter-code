@@ -18,6 +18,8 @@ exports.signin = (req, res, next) => {
 exports.signup = (req, res, next) => {
   const email = req.body.email
   const password = req.body.password
+  const firstName = req.body.firstName
+  const lastName = req.body.lastName
 
   if (!email || !password) {
     return res.status(422).send({ error: 'You must provide an email and password.' })
@@ -33,7 +35,9 @@ exports.signup = (req, res, next) => {
 
     const user = new User({
       email: email,
-      password: password
+      password: password,
+      firstName: firstName,
+      lastName: lastName
     })
 
     user.save((err) => {
